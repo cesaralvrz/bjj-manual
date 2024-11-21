@@ -5,75 +5,38 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import { ChevronDown } from 'lucide-react'
-
-// This would typically come from a database or API
-const techniques = [
-  {
-    category: "Guard Techniques",
-    items: [
-      {
-        id: 'triangle',
-        title: 'Triangle Choke',
-        description: 'The triangle choke is a chokehold that strangles the opponent using their own shoulder and your legs.',
-        videoUrl: 'https://www.youtube.com/embed/LDE0fkzZT6I'
-      },
-      {
-        id: 'armbar-from-guard',
-        title: 'Armbar from Guard',
-        description: 'The armbar from guard is a joint lock that hyperextends the elbow.',
-        videoUrl: 'https://www.youtube.com/embed/pQ43Oy5k9yQ'
-      },
-    ]
-  },
-  {
-    category: "Mount Techniques",
-    items: [
-      {
-        id: 'armbar-from-mount',
-        title: 'Armbar from Mount',
-        description: 'The armbar from mount is a powerful submission that isolates the opponents arm from a dominant position.',
-        videoUrl: 'https://www.youtube.com/embed/pQ43Oy5k9yQ'
-      },
-      {
-        id: 'ezekiel-choke',
-        title: 'Ezekiel Choke',
-        description: 'The Ezekiel choke is a powerful chokehold that can be applied from various positions, including mount.',
-        videoUrl: 'https://www.youtube.com/embed/pQ43Oy5k9yQ'
-      },
-    ]
-  },
-  {
-    category: "Back Control Techniques",
-    items: [
-      {
-        id: 'rear-naked-choke',
-        title: 'Rear Naked Choke',
-        description: 'The rear naked choke is a blood choke applied from behind the opponent.',
-        videoUrl: 'https://www.youtube.com/embed/pQ43Oy5k9yQ'
-      },
-      {
-        id: 'bow-and-arrow-choke',
-        title: 'Bow and Arrow Choke',
-        description: 'The bow and arrow choke is a variation of the collar choke applied from the back control position.',
-        videoUrl: 'https://www.youtube.com/embed/pQ43Oy5k9yQ'
-      },
-    ]
-  },
-]
+import { ChevronDown, Globe } from 'lucide-react'
+import { techniques } from '@/app/data/techniques'
+import { uiTranslations } from '@/app/translations/ui'
+import type { Language } from '@/app/data/techniques'
 
 export default function Techniques() {
   const [activeTechnique, setActiveTechnique] = useState<string | null>(null)
+  const [language, setLanguage] = useState<Language>('en')
+
+  const toggleLanguage = () => {
+    setLanguage(prev => prev === 'en' ? 'es' : 'en')
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">BJJ Techniques</h1>
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold">{uiTranslations[language].pageTitle}</h1>
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={toggleLanguage}
+          className="rounded-full"
+        >
+          <Globe className="h-4 w-4" />
+        </Button>
+      </div>
       
       <div className="flex flex-col lg:flex-row gap-8">
         <Card className="lg:w-1/4">
           <CardHeader>
-            <CardTitle>Technique Index</CardTitle>
-            <CardDescription>Click a technique to view details</CardDescription>
+            <CardTitle>{uiTranslations[language].techniqueIndex}</CardTitle>
+            <CardDescription>{uiTranslations[language].clickToView}</CardDescription>
           </CardHeader>
           <CardContent>
             <ScrollArea className="h-[60vh]">
@@ -81,7 +44,7 @@ export default function Techniques() {
                 {techniques.map((category) => (
                   <Collapsible key={category.category}>
                     <CollapsibleTrigger className="flex w-full items-center justify-between py-2 font-medium">
-                      {category.category}
+                      {uiTranslations[language].categories[category.category]}
                       <ChevronDown className="h-4 w-4 transition-transform duration-200" />
                     </CollapsibleTrigger>
                     <CollapsibleContent className="space-y-2 pl-4">
@@ -95,7 +58,7 @@ export default function Techniques() {
                             document.getElementById(technique.id)?.scrollIntoView({ behavior: 'smooth' })
                           }}
                         >
-                          {technique.title}
+                          {technique.title[language]}
                         </Button>
                       ))}
                     </CollapsibleContent>
@@ -107,15 +70,21 @@ export default function Techniques() {
         </Card>
         
         <div className="lg:w-3/4 space-y-8">
-          {techniques.flatMap(category => category.items).map((technique) => (
+          {techniques.flatMap((category) => category.items.map(item => ({
+            ...item,
+            id: item.id,
+            title: item.title,
+            description: item.description,
+            videoUrl: item.videoUrl
+          }))).map((technique) => (
             <Card 
               key={technique.id} 
               id={technique.id}
               className={`${activeTechnique === technique.id ? 'ring-2 ring-primary' : ''}`}
             >
               <CardHeader>
-                <CardTitle>{technique.title}</CardTitle>
-                <CardDescription>{technique.description}</CardDescription>
+                <CardTitle>{technique.title[language]}</CardTitle>
+                <CardDescription>{technique.description[language]}</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="aspect-w-16 aspect-h-9">
