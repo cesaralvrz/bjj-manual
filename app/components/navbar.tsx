@@ -8,8 +8,12 @@ import { useState } from 'react'
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const handleLinkClick = () => {
+    setIsMenuOpen(false)
+  }
+
   return (
-    <nav className="border-b">
+    <nav className="border-b bg-background">
       <div className="container mx-auto flex justify-between items-center h-16 px-4">
         <Link href="/" className="text-xl font-bold flex items-center gap-2">
           <span className="size-8 rounded-full bg-primary flex items-center justify-center">
@@ -59,11 +63,11 @@ export function Navbar() {
         </ul>
 
         {isMenuOpen && (
-          <div className="absolute top-16 left-0 right-0 bg-background border-b md:hidden">
-            <ul className="flex flex-col p-4">
+          <div className="absolute top-16 left-0 right-0 bg-white dark:bg-zinc-900 border-b md:hidden shadow-lg">
+            <ul className="flex flex-col p-4 bg-white dark:bg-zinc-900">
               <li className="mb-2">
                 <Button variant="ghost" className="w-full justify-start" asChild>
-                  <Link href="/" className="flex items-center gap-2">
+                  <Link href="/" className="flex items-center gap-2" onClick={handleLinkClick}>
                     <Home className="w-4 h-4" />
                     Home
                   </Link>
@@ -71,7 +75,7 @@ export function Navbar() {
               </li>
               <li className="mb-2">
                 <Button variant="ghost" className="w-full justify-start" asChild>
-                  <Link href="/techniques" className="flex items-center gap-2">
+                  <Link href="/techniques" className="flex items-center gap-2" onClick={handleLinkClick}>
                     <Book className="w-4 h-4" />
                     Techniques
                   </Link>
@@ -79,7 +83,7 @@ export function Navbar() {
               </li>
               <li>
                 <Button variant="ghost" className="w-full justify-start" asChild>
-                  <Link href="/about" className="flex items-center gap-2">
+                  <Link href="/about" className="flex items-center gap-2" onClick={handleLinkClick}>
                     <Info className="w-4 h-4" />
                     About
                   </Link>

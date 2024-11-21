@@ -34,13 +34,13 @@ export default function Techniques() {
       </div>
       
       <div className="flex flex-col lg:flex-row gap-8">
-        <Card className="lg:w-1/4">
+        <Card className="lg:w-1/4 h-fit">
           <CardHeader>
             <CardTitle>{uiTranslations[language].techniqueIndex}</CardTitle>
             <CardDescription>{uiTranslations[language].clickToView}</CardDescription>
           </CardHeader>
           <CardContent>
-            <ScrollArea className="h-[calc(100vh-12rem)]">
+            <ScrollArea className="h-auto">
               <div className="space-y-4">
                 {techniques.map((category) => (
                   <Collapsible 
