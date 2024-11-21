@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 export default function About() {
   return (
     <div className="container mx-auto max-w-4xl px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">About BJJ Manual Library</h1>
+      <h1 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">About BJJ Manual Library</h1>
       <Card>
         <CardHeader>
           <CardTitle>Our Mission</CardTitle>
@@ -24,7 +24,7 @@ export default function About() {
             BJJ journey and contributes to your growth as a martial artist.
           </p>
           <p>
-          Special thanks to the Jiu Jitsu Circle and Mati for teaching us these techniques.
+          Special thanks to Círculo de Jiu Jitsu and Mati for teaching us these techniques.
           </p>
           <p>
             Created by <a href="https://cesaralvarez.dev/" className="underline text-purple-500">César Álvarez Llaneza</a>.

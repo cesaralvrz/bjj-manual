@@ -4,9 +4,9 @@ import Link from "next/link"
 export default function Home() {
   return (
     <div className="container mx-auto px-4">
-      <section className="pt-32 pb-20 text-center">
+      <section className="pt-20 sm:pt-32 pb-20 text-center">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Master BJJ Techniques
           </h1>
           <p className="text-2xl mb-8 text-muted-foreground">

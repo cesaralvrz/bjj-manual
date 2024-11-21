@@ -13,6 +13,7 @@ import type { Language } from '@/app/data/techniques'
 export default function Techniques() {
   const [activeTechnique, setActiveTechnique] = useState<string | null>(null)
   const [language, setLanguage] = useState<Language>('en')
+  const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({})
 
   const toggleLanguage = () => {
     setLanguage(prev => prev === 'en' ? 'es' : 'en')
@@ -39,20 +40,33 @@ export default function Techniques() {
             <CardDescription>{uiTranslations[language].clickToView}</CardDescription>
           </CardHeader>
           <CardContent>
-            <ScrollArea className="h-[60vh]">
+            <ScrollArea className="h-[calc(100vh-12rem)]">
               <div className="space-y-4">
                 {techniques.map((category) => (
-                  <Collapsible key={category.category}>
+                  <Collapsible 
+                    key={category.category}
+                    open={openCategories[category.category]}
+                    onOpenChange={(isOpen) => {
+                      setOpenCategories(prev => ({
+                        ...prev,
+                        [category.category]: isOpen
+                      }))
+                    }}
+                  >
                     <CollapsibleTrigger className="flex w-full items-center justify-between py-2 font-medium">
                       {uiTranslations[language].categories[category.category]}
-                      <ChevronDown className="h-4 w-4 transition-transform duration-200" />
+                      <ChevronDown 
+                        className={`h-4 w-4 transition-transform duration-200 ${
+                          openCategories[category.category] ? 'transform rotate-180' : ''
+                        }`}
+                      />
                     </CollapsibleTrigger>
                     <CollapsibleContent className="space-y-2 pl-4">
                       {category.items.map((technique) => (
                         <Button
                           key={technique.id}
                           variant="ghost"
-                          className="w-full justify-start"
+                          className="w-full justify-start whitespace-normal h-auto text-left"
                           onClick={() => {
                             setActiveTechnique(technique.id)
                             document.getElementById(technique.id)?.scrollIntoView({ behavior: 'smooth' })
@@ -87,7 +101,7 @@ export default function Techniques() {
                 <CardDescription>{technique.description[language]}</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="aspect-w-16 aspect-h-9">
+                <div className="aspect-video">
                   <iframe 
                     src={technique.videoUrl} 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

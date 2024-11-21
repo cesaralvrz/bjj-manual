@@ -5,7 +5,7 @@ export const uiTranslations = {
     clickToView: "Click a technique to view details",
     categories: {
       "Guard Techniques": "Guard Techniques",
-      "Mount Techniques": "Mount Techniques",
+      "Defense Techniques": "Defense Techniques",
       "Back Control Techniques": "Back Control Techniques"
     }
   },
@@ -15,7 +15,7 @@ export const uiTranslations = {
     clickToView: "Haga clic en una técnica para ver detalles",
     categories: {
       "Guard Techniques": "Técnicas de Guardia",
-      "Mount Techniques": "Técnicas de Montada",
+      "Defense Techniques": "Técnicas de Defensa",
       "Back Control Techniques": "Técnicas de Control de Espalda"
     }
   }
