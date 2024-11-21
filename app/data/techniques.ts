@@ -18,11 +18,11 @@ export const techniques = [
         id: 'triangle',
         title: {
           en: 'Triangle Choke',
-          es: 'Estrangulación Triangular'
+          es: 'Estrangulación de Triángulo'
         },
         description: {
           en: 'The triangle choke is a chokehold that strangles the opponent using their own shoulder and your legs.',
-          es: 'La estrangulación triangular es una técnica que estrangula al oponente usando su propio hombro y tus piernas.'
+          es: 'La estrangulación de triángulo es una técnica que estrangula al oponente usando su propio hombro y tus piernas.'
         },
         videoUrl: 'https://www.youtube.com/embed/LDE0fkzZT6I'
       },
@@ -45,8 +45,8 @@ export const techniques = [
           es: 'Llave de Brazo cuando hay defensa'
         },
         description: {
-          en: 'Top Lock is a guard control where you trap your opponents head and one arm with your legs. The armbar from guard is a joint lock that hyperextends the elbow.',
-          es: 'El Top Lock es un control desde la guardia donde atrapas la cabeza y un brazo del oponente (la clave es que no se vea el hombro). La palanca al brazo desde la guardia es un bloqueo articular que hiperextiende el codo.'
+          en: 'The solution when the opponent is defending the armbar. We weave through the legs and catch the far leg and spin underneath. this off balances him and makes him fall. Then we grab the leg and pull.',
+          es: 'La solución cuando el oponente defiende la llave de brazo. Pasamos por las piernas y atrapamos la pierna más alejada y giramos debajo. Esto desequilibra y hace que caiga. Después cogemos la pierna por arriba y estiramos.'
         },
         videoUrl: 'https://www.youtube.com/embed/P5wWnMrihCU?si=OKn0AhSW6VH8j4lm'
       },
