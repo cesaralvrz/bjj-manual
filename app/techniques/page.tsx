@@ -21,7 +21,7 @@ export default function Techniques() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">{uiTranslations[language].pageTitle}</h1>
+        <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{uiTranslations[language].pageTitle}</h1>
         <Button
           variant="outline"
           size="icon"

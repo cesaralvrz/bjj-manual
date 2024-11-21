@@ -15,7 +15,7 @@ export function Navbar() {
               <path d="M6.5 15h5" />
             </svg>
           </span>
-          BJJ Techniques
+          BJJ Manual
         </Link>
         <ul className="flex space-x-4">
           <li>

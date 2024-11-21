@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { Globe } from "lucide-react"
 import { useLanguage } from "@/app/contexts/language-context"
 
@@ -20,7 +19,6 @@ export function Navbar() {
           >
             <Globe className="h-4 w-4" />
           </Button>
-          <ThemeToggle />
         </div>
       </div>
     </nav>
