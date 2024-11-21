@@ -41,12 +41,24 @@ export const techniques = [
       {
         id: 'armbar-from-guard-stacked',
         title: {
-          en: 'Stacked Armbar',
-          es: 'Llave de Brazo cuando hay defensa'
+          en: 'Swing Move in Stacked Armbar',
+          es: 'Swing Move en Llave de Brazo cuando hay defensa'
         },
         description: {
           en: 'The solution when the opponent is defending the armbar. We weave through the legs and catch the far leg and spin underneath. this off balances him and makes him fall. Then we grab the leg and pull.',
           es: 'La solución cuando el oponente defiende la llave de brazo. Pasamos por las piernas y atrapamos la pierna más alejada y giramos debajo. Esto desequilibra y hace que caiga. Después cogemos la pierna por arriba y estiramos.'
+        },
+        videoUrl: 'https://www.youtube.com/embed/P5wWnMrihCU?si=OKn0AhSW6VH8j4lm'
+      },
+      {
+        id: 'scissor-sweep ',
+        title: {
+          en: 'Scissor Sweep',
+          es: 'Scissor Sweep'
+        },
+        description: {
+          en: 'Basic sweep from closed or open guard, where you use your leg like scissors to off-balance your opponent while pulling their arm towards you.',
+          es: 'Barrido básico desde la guardia cerrada o abierta, donde usas tu pierna como una "tijera" para desequilibrar al oponente mientras tiras de su brazo hacia ti.'
         },
         videoUrl: 'https://www.youtube.com/embed/P5wWnMrihCU?si=OKn0AhSW6VH8j4lm'
       },
