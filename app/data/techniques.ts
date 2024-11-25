@@ -60,7 +60,7 @@ export const techniques = [
           en: 'Basic sweep from closed or open guard, where you use your leg like scissors to off-balance your opponent while pulling their arm towards you.',
           es: 'Barrido básico desde la guardia cerrada o abierta, donde usas tu pierna como una "tijera" para desequilibrar al oponente mientras tiras de su brazo hacia ti.'
         },
-        videoUrl: 'https://www.youtube.com/embed/P5wWnMrihCU?si=OKn0AhSW6VH8j4lm'
+        videoUrl: 'https://youtube.com/embed/nVRzhBr4tj8?si=L_QaigC-69wuhg0r'
       },
       {
         id: 'pendulum-sweep ',
@@ -73,6 +73,18 @@ export const techniques = [
           es: 'La raspada de péndulo a la montada utiliza un movimiento de pierna de cadera creando un péndulo para desequilibrar al oponente y pasar directamente a la montada.'
         },
         videoUrl: 'https://youtube.com/embed/xVjxhuBQT6c?si=tsFd_iQltiXqJSLv'
+      },
+      {
+        id: 'muscle-sweep ',
+        title: {
+          en: 'Muscle Sweep (Lumberjack)',
+          es: 'Raspada de Leñador'
+        },
+        description: {
+          en: 'The muscle sweep (or Lumberjack) is a technique where you trap the opponents arm, use your hips and arm to generate leverage, and sweep them onto their back, allowing you to secure the top position.',
+          es: 'La raspada de leñador es una técnica en la que atrapas el brazo del oponente, utilizas tus caderas y tu brazo (como si intentaras darte un golpe en la cara) para desestabilizar al oponente, permitiéndote asegurar la posición superior'
+        },
+        videoUrl: 'https://youtube.com/embed/49jWu8gmAHQ?si=cEyxpj9KTzHB57Zq' 
       },
     ]
   },
