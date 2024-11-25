@@ -66,7 +66,7 @@ export const techniques = [
         id: 'pendulum-sweep ',
         title: {
           en: 'Pendulum Sweep to Mount',
-          es: 'Raspada de Peédulo a Montada'
+          es: 'Raspada de Péndulo a Montada'
         },
         description: {
           en: 'The pendulum sweep to mount uses a swinging leg motion to off-balance the opponent and transition directly to mount.',
