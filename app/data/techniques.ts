@@ -62,6 +62,18 @@ export const techniques = [
         },
         videoUrl: 'https://www.youtube.com/embed/P5wWnMrihCU?si=OKn0AhSW6VH8j4lm'
       },
+      {
+        id: 'pendulum-sweep ',
+        title: {
+          en: 'Pendulum Sweep to Mount',
+          es: 'Raspada de Peédulo a Montada'
+        },
+        description: {
+          en: 'The pendulum sweep to mount uses a swinging leg motion to off-balance the opponent and transition directly to mount.',
+          es: 'La raspada de péndulo a la montada utiliza un movimiento de pierna de cadera creando un péndulo para desequilibrar al oponente y pasar directamente a la montada.'
+        },
+        videoUrl: 'https://youtube.com/embed/xVjxhuBQT6c?si=tsFd_iQltiXqJSLv'
+      },
     ]
   },
   {
