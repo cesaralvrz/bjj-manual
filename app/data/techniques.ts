@@ -109,22 +109,24 @@ export const techniques = [
     ]
   },
   {
-    category: "Defense Techniques",
-    items: [
-      {
-        id: 'escape-guard',
-        subcategory: 'defense',
-        title: {
-          en: 'Escape Close Guard (Gi)',
-          es: 'Salir de guardia cerrada (gi)'
-        },
-        description: {
-          en: 'To open closed guard with a gi, grip your opponent’s sleeve, plant one foot on the ground, stand up while controlling their arm, and use your knee to press down on their leg, forcing the guard to open.',
-          es: 'Para abrir la guardia cerrada con gi, sujeta la manga de tu oponente, apoya un pie en el suelo, ponte de pie mientras controlas su brazo y utiliza tu rodilla para presionar sobre su pierna, forzando la apertura de la guardia.'
-        },
-        videoUrl: 'https://www.youtube.com/embed/Bn7WId-nl0A?si=Hcs5FIg80v_wBelp'
-      },
-    ]
+    category: "Side-control",
+    items: []
+  },
+  {
+    category: "Mount",
+    items: []
+  },
+  {
+    category: "Back",
+    items: []
+  },
+  {
+    category: "Crucifix",
+    items: []
+  },
+  {
+    category: "Double Sleeve",
+    items: []
   },
 ] as const
 

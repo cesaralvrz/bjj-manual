@@ -4,9 +4,14 @@ export const uiTranslations = {
     techniqueIndex: "Technique Index",
     clickToView: "Click a technique to view details",
     categories: {
-      "Closed Guard": "Guard Techniques",
+      "Closed Guard": "Closed Guard",
       "Defense Techniques": "Defense Techniques",
-      "Back Control Techniques": "Back Control Techniques"
+      "Back Control Techniques": "Back Control Techniques",
+      "Side-control": "Side-control",
+      "Mount": "Mount",
+      "Back": "Back",
+      "Crucifix": "Crucifix",
+      "Double Sleeve": "Double Sleeve"
     },
     subcategories: {
       attack: "Attack",
@@ -19,8 +24,12 @@ export const uiTranslations = {
     clickToView: "Haga clic en una técnica para ver detalles",
     categories: {
       "Closed Guard": "Guardia Cerrada",
-      "Defense Techniques": "Técnicas de Defensa",
-      "Back Control Techniques": "Técnicas de Control de Espalda"
+      "Back Control Techniques": "Técnicas de Control de Espalda",
+      "Side-control": "100 kilos",
+      "Mount": "Montada",
+      "Back": "Espalda",
+      "Crucifix": "Crucifijo",
+      "Double Sleeve": "Doble Manga"
     },
     subcategories: {
       attack: "Ataque",
