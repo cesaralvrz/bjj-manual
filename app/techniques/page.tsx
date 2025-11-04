@@ -11,10 +11,24 @@ import { uiTranslations } from '@/app/translations/ui'
 import type { Language } from '@/app/data/techniques'
 
 export default function Techniques() {
-  const [activeTechnique, setActiveTechnique] = useState<string | null>(null)
+  const defaultCategory = techniques[0]
+  const defaultSubcategory: 'attack' | 'defense' =
+    (defaultCategory?.items || []).some(i => i.subcategory === 'attack') ? 'attack' : 'defense'
+
+  const [activeTechnique, setActiveTechnique] = useState<string | null>(
+    defaultCategory?.items.find(i => i.subcategory === defaultSubcategory)?.id || null
+  )
   const [language, setLanguage] = useState<Language>('en')
-  const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({})
-  const [openSubcategories, setOpenSubcategories] = useState<Record<string, boolean>>({})
+  const [selectedCategory, setSelectedCategory] = useState<string>(defaultCategory?.category || '')
+  const [selectedSubcategory, setSelectedSubcategory] = useState<'attack' | 'defense'>(defaultSubcategory)
+  const [openCategories, setOpenCategories] = useState<Record<string, boolean>>(
+    defaultCategory?.category ? { [defaultCategory.category]: true } : {}
+  )
+  const [openSubcategories, setOpenSubcategories] = useState<Record<string, boolean>>(
+    defaultCategory?.category
+      ? { [`${defaultCategory.category}::${defaultSubcategory}`]: true }
+      : {}
+  )
 
   const toggleLanguage = () => {
     setLanguage(prev => prev === 'en' ? 'es' : 'en')
@@ -74,7 +88,13 @@ export default function Techniques() {
                             }))
                           }}
                         >
-                          <CollapsibleTrigger className="flex w-full items-center justify-between py-1 text-xs font-medium lowercase text-primary">
+                          <CollapsibleTrigger
+                            className="flex w-full items-center justify-between py-1 text-xs font-medium lowercase text-primary"
+                            onClick={() => {
+                              setSelectedCategory(category.category)
+                              setSelectedSubcategory('attack')
+                            }}
+                          >
                             <span className="flex items-center gap-1">
                               <Sword className="h-3 w-3" />
                               {uiTranslations[language].subcategories.attack}
@@ -94,10 +114,24 @@ export default function Techniques() {
                                   variant="ghost"
                                   className="w-full justify-start whitespace-normal h-auto text-left"
                                   onClick={() => {
+                                    setSelectedCategory(category.category)
+                                    setSelectedSubcategory(technique.subcategory)
+                                    setOpenCategories(prev => ({
+                                      ...prev,
+                                      [category.category]: true,
+                                    }))
+                                    setOpenSubcategories(prev => ({
+                                      ...prev,
+                                      [`${category.category}::${technique.subcategory}`]: true,
+                                    }))
                                     setActiveTechnique(technique.id)
-                                    document
-                                      .getElementById(technique.id)
-                                      ?.scrollIntoView({ behavior: 'smooth' })
+                                    if (typeof window !== 'undefined') {
+                                      window.requestAnimationFrame(() => {
+                                        document
+                                          .getElementById(technique.id)
+                                          ?.scrollIntoView({ behavior: 'smooth' })
+                                      })
+                                    }
                                   }}
                                 >
                                   {technique.title[language]}
@@ -118,7 +152,13 @@ export default function Techniques() {
                             }))
                           }}
                         >
-                          <CollapsibleTrigger className="flex w-full items-center justify-between py-1 text-xs font-medium lowercase text-primary">
+                          <CollapsibleTrigger
+                            className="flex w-full items-center justify-between py-1 text-xs font-medium lowercase text-primary"
+                            onClick={() => {
+                              setSelectedCategory(category.category)
+                              setSelectedSubcategory('defense')
+                            }}
+                          >
                             <span className="flex items-center gap-1">
                               <Shield className="h-3 w-3" />
                               {uiTranslations[language].subcategories.defense}
@@ -138,10 +178,24 @@ export default function Techniques() {
                                   variant="ghost"
                                   className="w-full justify-start whitespace-normal h-auto text-left"
                                   onClick={() => {
+                                    setSelectedCategory(category.category)
+                                    setSelectedSubcategory(technique.subcategory)
+                                    setOpenCategories(prev => ({
+                                      ...prev,
+                                      [category.category]: true,
+                                    }))
+                                    setOpenSubcategories(prev => ({
+                                      ...prev,
+                                      [`${category.category}::${technique.subcategory}`]: true,
+                                    }))
                                     setActiveTechnique(technique.id)
-                                    document
-                                      .getElementById(technique.id)
-                                      ?.scrollIntoView({ behavior: 'smooth' })
+                                    if (typeof window !== 'undefined') {
+                                      window.requestAnimationFrame(() => {
+                                        document
+                                          .getElementById(technique.id)
+                                          ?.scrollIntoView({ behavior: 'smooth' })
+                                      })
+                                    }
                                   }}
                                 >
                                   {technique.title[language]}
@@ -159,13 +213,9 @@ export default function Techniques() {
         </Card>
         
         <div className="lg:w-3/4 space-y-8">
-          {techniques.flatMap((category) => category.items.map(item => ({
-            ...item,
-            id: item.id,
-            title: item.title,
-            description: item.description,
-            videoUrl: item.videoUrl
-          }))).map((technique) => (
+          {(techniques.find(c => c.category === selectedCategory)?.items
+            .filter(item => item.subcategory === selectedSubcategory) || [])
+            .map((technique) => (
             <Card 
               key={technique.id} 
               id={technique.id}
