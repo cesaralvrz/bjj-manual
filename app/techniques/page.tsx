@@ -1,11 +1,11 @@
 "use client"
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import { ChevronDown, Globe, Sword, Shield } from 'lucide-react'
+import { ChevronDown, Globe, Sword, Shield, ArrowUp } from 'lucide-react'
 import { techniques } from '@/app/data/techniques'
 import { uiTranslations } from '@/app/translations/ui'
 import type { Language } from '@/app/data/techniques'
@@ -29,6 +29,18 @@ export default function Techniques() {
       ? { [`${defaultCategory.category}::${defaultSubcategory}`]: true }
       : {}
   )
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  // Show back-to-top after scrolling down a bit
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY || document.documentElement.scrollTop
+      setShowBackToTop(y > 400)
+    }
+    window.addEventListener('scroll', onScroll)
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const toggleLanguage = () => {
     setLanguage(prev => prev === 'en' ? 'es' : 'en')
@@ -239,6 +251,18 @@ export default function Techniques() {
           ))}
         </div>
       </div>
+      {/* Back to top button */}
+      {showBackToTop && (
+        <Button
+          aria-label="Back to top"
+          className="fixed bottom-6 right-6 h-10 w-10 rounded-full shadow-lg"
+          variant="default"
+          size="icon"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          <ArrowUp className="h-5 w-5" />
+        </Button>
+      )}
     </div>
   )
 }

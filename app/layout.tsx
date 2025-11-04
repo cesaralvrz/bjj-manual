@@ -33,7 +33,7 @@ export default function RootLayout({
               <main className="container mx-auto px-4 py-8">
                 {children}
               </main>
-              <div className="fixed bottom-4 right-4">
+              <div className="fixed top-4 right-4">
                 <ModeToggle />
               </div>
             </div>
