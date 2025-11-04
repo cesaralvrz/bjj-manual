@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import { ChevronDown, Globe } from 'lucide-react'
+import { ChevronDown, Globe, Sword, Shield } from 'lucide-react'
 import { techniques } from '@/app/data/techniques'
 import { uiTranslations } from '@/app/translations/ui'
 import type { Language } from '@/app/data/techniques'
@@ -14,6 +14,7 @@ export default function Techniques() {
   const [activeTechnique, setActiveTechnique] = useState<string | null>(null)
   const [language, setLanguage] = useState<Language>('en')
   const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({})
+  const [openSubcategories, setOpenSubcategories] = useState<Record<string, boolean>>({})
 
   const toggleLanguage = () => {
     setLanguage(prev => prev === 'en' ? 'es' : 'en')
@@ -62,19 +63,93 @@ export default function Techniques() {
                       />
                     </CollapsibleTrigger>
                     <CollapsibleContent className="space-y-2 pl-4">
-                      {category.items.map((technique) => (
-                        <Button
-                          key={technique.id}
-                          variant="ghost"
-                          className="w-full justify-start whitespace-normal h-auto text-left"
-                          onClick={() => {
-                            setActiveTechnique(technique.id)
-                            document.getElementById(technique.id)?.scrollIntoView({ behavior: 'smooth' })
+                      {/* Attack subsection (collapsible) */}
+                      {category.items.some((t) => t.subcategory === 'attack') && (
+                        <Collapsible
+                          open={openSubcategories[`${category.category}::attack`]}
+                          onOpenChange={(isOpen) => {
+                            setOpenSubcategories(prev => ({
+                              ...prev,
+                              [`${category.category}::attack`]: isOpen
+                            }))
                           }}
                         >
-                          {technique.title[language]}
-                        </Button>
-                      ))}
+                          <CollapsibleTrigger className="flex w-full items-center justify-between py-1 text-xs font-medium lowercase text-primary">
+                            <span className="flex items-center gap-1">
+                              <Sword className="h-3 w-3" />
+                              {uiTranslations[language].subcategories.attack}
+                            </span>
+                            <ChevronDown 
+                              className={`h-3 w-3 transition-transform duration-200 ${
+                                openSubcategories[`${category.category}::attack`] ? 'transform rotate-180' : ''
+                              }`}
+                            />
+                          </CollapsibleTrigger>
+                          <CollapsibleContent className="space-y-1 pl-2">
+                            {category.items
+                              .filter((t) => t.subcategory === 'attack')
+                              .map((technique) => (
+                                <Button
+                                  key={technique.id}
+                                  variant="ghost"
+                                  className="w-full justify-start whitespace-normal h-auto text-left"
+                                  onClick={() => {
+                                    setActiveTechnique(technique.id)
+                                    document
+                                      .getElementById(technique.id)
+                                      ?.scrollIntoView({ behavior: 'smooth' })
+                                  }}
+                                >
+                                  {technique.title[language]}
+                                </Button>
+                              ))}
+                          </CollapsibleContent>
+                        </Collapsible>
+                      )}
+
+                      {/* Defense subsection (collapsible) */}
+                      {category.items.some((t) => t.subcategory === 'defense') && (
+                        <Collapsible
+                          open={openSubcategories[`${category.category}::defense`]}
+                          onOpenChange={(isOpen) => {
+                            setOpenSubcategories(prev => ({
+                              ...prev,
+                              [`${category.category}::defense`]: isOpen
+                            }))
+                          }}
+                        >
+                          <CollapsibleTrigger className="flex w-full items-center justify-between py-1 text-xs font-medium lowercase text-primary">
+                            <span className="flex items-center gap-1">
+                              <Shield className="h-3 w-3" />
+                              {uiTranslations[language].subcategories.defense}
+                            </span>
+                            <ChevronDown 
+                              className={`h-3 w-3 transition-transform duration-200 ${
+                                openSubcategories[`${category.category}::defense`] ? 'transform rotate-180' : ''
+                              }`}
+                            />
+                          </CollapsibleTrigger>
+                          <CollapsibleContent className="space-y-1 pl-2">
+                            {category.items
+                              .filter((t) => t.subcategory === 'defense')
+                              .map((technique) => (
+                                <Button
+                                  key={technique.id}
+                                  variant="ghost"
+                                  className="w-full justify-start whitespace-normal h-auto text-left"
+                                  onClick={() => {
+                                    setActiveTechnique(technique.id)
+                                    document
+                                      .getElementById(technique.id)
+                                      ?.scrollIntoView({ behavior: 'smooth' })
+                                  }}
+                                >
+                                  {technique.title[language]}
+                                </Button>
+                              ))}
+                          </CollapsibleContent>
+                        </Collapsible>
+                      )}
                     </CollapsibleContent>
                   </Collapsible>
                 ))}

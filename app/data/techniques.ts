@@ -1,9 +1,10 @@
 export const techniques = [
   {
-    category: "Guard Techniques",
+    category: "Closed Guard",
     items: [
         {
             id: 'hitbump-triangle',
+            subcategory: 'attack',
             title: {
                 en: 'Hip Bump Sweep to Triangle Choke',
                 es: 'Hip Bump Sweep a Triángulo'
@@ -16,6 +17,7 @@ export const techniques = [
         },
       {
         id: 'triangle',
+        subcategory: 'attack',
         title: {
           en: 'Triangle Choke',
           es: 'Estrangulación de Triángulo'
@@ -28,6 +30,7 @@ export const techniques = [
       },
       {
         id: 'armbar-from-guard',
+        subcategory: 'attack',
         title: {
           en: 'Top-Lock to Armbar from Guard',
           es: 'Top-Lock a Llave de Brazo desde Guardia Cerrada'
@@ -40,6 +43,7 @@ export const techniques = [
       },
       {
         id: 'armbar-from-guard-stacked',
+        subcategory: 'attack',
         title: {
           en: 'Swing Move in Stacked Armbar',
           es: 'Swing Move en Llave de Brazo cuando hay defensa'
@@ -52,6 +56,7 @@ export const techniques = [
       },
       {
         id: 'scissor-sweep ',
+        subcategory: 'attack',
         title: {
           en: 'Scissor Sweep',
           es: 'Scissor Sweep'
@@ -64,6 +69,7 @@ export const techniques = [
       },
       {
         id: 'pendulum-sweep ',
+        subcategory: 'attack',
         title: {
           en: 'Pendulum Sweep to Mount',
           es: 'Raspada de Péndulo a Montada'
@@ -76,6 +82,7 @@ export const techniques = [
       },
       {
         id: 'muscle-sweep ',
+        subcategory: 'defense',
         title: {
           en: 'Muscle Sweep (Lumberjack)',
           es: 'Raspada de Leñador'
@@ -86,6 +93,19 @@ export const techniques = [
         },
         videoUrl: 'https://youtube.com/embed/49jWu8gmAHQ?si=cEyxpj9KTzHB57Zq' 
       },
+      {
+        id: 'escape-guard',
+        subcategory: 'defense',
+        title: {
+          en: 'Escape Close Guard (Gi)',
+          es: 'Salir de guardia cerrada (gi)'
+        },
+        description: {
+          en: 'To open closed guard with a gi, grip your opponent’s sleeve, plant one foot on the ground, stand up while controlling their arm, and use your knee to press down on their leg, forcing the guard to open.',
+          es: 'Para abrir la guardia cerrada con gi, sujeta la manga de tu oponente, apoya un pie en el suelo, ponte de pie mientras controlas su brazo y utiliza tu rodilla para presionar sobre su pierna, forzando la apertura de la guardia.'
+        },
+        videoUrl: 'https://www.youtube.com/embed/Bn7WId-nl0A?si=Hcs5FIg80v_wBelp'
+      },
     ]
   },
   {
@@ -93,6 +113,7 @@ export const techniques = [
     items: [
       {
         id: 'escape-guard',
+        subcategory: 'defense',
         title: {
           en: 'Escape Close Guard (Gi)',
           es: 'Salir de guardia cerrada (gi)'
