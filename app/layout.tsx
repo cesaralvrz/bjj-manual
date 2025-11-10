@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { Navbar } from './components/navbar'
 import { ThemeProvider } from './components/theme-provider'
-import { ModeToggle } from './components/mode-toggle'
 import { LanguageProvider } from '@/app/contexts/language-context'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -33,9 +32,6 @@ export default function RootLayout({
               <main className="container mx-auto px-4 py-8">
                 {children}
               </main>
-              <div className="fixed top-4 right-4">
-                <ModeToggle />
-              </div>
             </div>
           </ThemeProvider>
         </LanguageProvider>

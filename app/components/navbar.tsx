@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 import { Home, Book, Info, Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { ModeToggle } from './mode-toggle'
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -35,32 +36,35 @@ export function Navbar() {
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </Button>
 
-        <ul className="hidden md:flex space-x-4">
-          <li>
-            <Button variant="ghost" asChild>
-              <Link href="/" className="flex items-center gap-2">
-                <Home className="w-4 h-4" />
-                Home
-              </Link>
-            </Button>
-          </li>
-          <li>
-            <Button variant="ghost" asChild>
-              <Link href="/techniques" className="flex items-center gap-2">
-                <Book className="w-4 h-4" />
-                Techniques
-              </Link>
-            </Button>
-          </li>
-          <li>
-            <Button variant="ghost" asChild>
-              <Link href="/about" className="flex items-center gap-2">
-                <Info className="w-4 h-4" />
-                About
-              </Link>
-            </Button>
-          </li>
-        </ul>
+        <div className="hidden md:flex items-center space-x-4">
+          <ul className="flex space-x-4">
+            <li>
+              <Button variant="ghost" asChild>
+                <Link href="/" className="flex items-center gap-2">
+                  <Home className="w-4 h-4" />
+                  Home
+                </Link>
+              </Button>
+            </li>
+            <li>
+              <Button variant="ghost" asChild>
+                <Link href="/techniques" className="flex items-center gap-2">
+                  <Book className="w-4 h-4" />
+                  Techniques
+                </Link>
+              </Button>
+            </li>
+            <li>
+              <Button variant="ghost" asChild>
+                <Link href="/about" className="flex items-center gap-2">
+                  <Info className="w-4 h-4" />
+                  About
+                </Link>
+              </Button>
+            </li>
+          </ul>
+          <ModeToggle />
+        </div>
 
         {isMenuOpen && (
           <div className="absolute top-16 left-0 right-0 bg-white dark:bg-zinc-900 border-b md:hidden shadow-lg">
@@ -81,13 +85,18 @@ export function Navbar() {
                   </Link>
                 </Button>
               </li>
-              <li>
+              <li className="mb-2">
                 <Button variant="ghost" className="w-full justify-start" asChild>
                   <Link href="/about" className="flex items-center gap-2" onClick={handleLinkClick}>
                     <Info className="w-4 h-4" />
                     About
                   </Link>
                 </Button>
+              </li>
+              <li className="pt-2 border-t">
+                <div className="flex justify-start">
+                  <ModeToggle />
+                </div>
               </li>
             </ul>
           </div>
