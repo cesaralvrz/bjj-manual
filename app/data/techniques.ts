@@ -110,7 +110,60 @@ export const techniques = [
   },
   {
     category: "Side-control",
-    items: []
+    items: [
+      {
+        id: 'armbar-side-control',
+        subcategory: 'attack',
+        title: {
+          en: 'Armbar from Side Control',
+          es: 'Llave de Brazo desde Control Lateral'
+        },
+        description: {
+          en: 'The armbar from side control is a joint lock that hyperextends the elbow by isolating the opponent\'s arm while maintaining side control position.',
+          es: 'La llave de brazo desde control lateral es un bloqueo articular que hiperextiende el codo aislando el brazo del oponente mientras mantienes la posición de control lateral.'
+        },
+        videoUrl: 'https://www.youtube.com/embed/j8gYhUtrgmY'
+      },
+      {
+        id: 'americana-side-control',
+        subcategory: 'attack',
+        title: {
+          en: 'Americana from Side Control',
+          es: 'Americana desde Control Lateral'
+        },
+        description: {
+          en: 'The Americana (or keylock) from side control is a shoulder lock that applies pressure to the opponent\'s shoulder joint by controlling their arm and rotating it.',
+          es: 'La Americana (o llave de hombro) desde control lateral es un bloqueo de hombro que aplica presión a la articulación del hombro del oponente controlando su brazo y rotándolo.'
+        },
+        videoUrl: 'https://www.youtube.com/embed/JdLeRi62vCI'
+      },
+      {
+        id: 'arm-triangle-side-control',
+        subcategory: 'attack',
+        title: {
+          en: 'Arm Triangle from Side Control',
+          es: 'Triángulo de Brazo desde Control Lateral'
+        },
+        description: {
+          en: 'The arm triangle choke from side control is a chokehold that strangles the opponent by trapping their arm and head with your arms, cutting off blood flow to the brain.',
+          es: 'El triángulo de brazo desde control lateral es una estrangulación que estrangula al oponente atrapando su brazo y cabeza con tus brazos, cortando el flujo de sangre al cerebro.'
+        },
+        videoUrl: 'https://www.youtube.com/embed/wggJypdky_w'
+      },
+      {
+        id: 'triangle-side-control',
+        subcategory: 'attack',
+        title: {
+          en: 'Triangle Choke from Side Control',
+          es: 'Triángulo desde Control Lateral'
+        },
+        description: {
+          en: 'The triangle choke from side control is a chokehold technique that uses your legs to strangle the opponent by trapping their head and arm.',
+          es: 'El triángulo desde control lateral es una técnica de estrangulación que usa tus piernas para estrangular al oponente atrapando su cabeza y brazo.'
+        },
+        videoUrl: 'https://www.youtube.com/embed/MXC9Tijb818'
+      },
+    ]
   },
   {
     category: "Mount",
@@ -122,7 +175,21 @@ export const techniques = [
   },
   {
     category: "Crucifix",
-    items: []
+    items: [
+      {
+        id: 'roll-from-turtle',
+        subcategory: 'attack',
+        title: {
+          en: 'Roll from Turtle to Crucifix',
+          es: 'Rollo desde Tortuga a Crucifijo'
+        },
+        description: {
+          en: 'The roll from turtle to crucifix is a technique that transitions from the turtle position into the crucifix position, securing control of the opponent\'s arm and head.',
+          es: 'El rollo desde tortuga a crucifijo es una técnica que transiciona desde la posición de tortuga a la posición de crucifijo, asegurando el control del brazo y la cabeza del oponente.'
+        },
+        videoUrl: 'https://www.youtube.com/embed/j5vwBUydpZw'
+      },
+    ]
   },
   {
     category: "Double Sleeve",
