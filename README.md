@@ -1,10 +1,12 @@
+<div align="center">
+
 # 🥋 BJJ Manual
 
-<div align="center">
-  <img src="public/images/bjj-manual-logo.png" alt="BJJ Manual Logo" width="600"/>
-</div>
+<img src="public/images/bjj-manual-logo.png" alt="BJJ Manual Logo" width="600"/>
 
 > A comprehensive digital manual for Brazilian Jiu-Jitsu techniques, featuring interactive 3D models, video tutorials, and bilingual support.
+
+</div>
 
 ![Next.js](https://img.shields.io/badge/Next.js-14.2-black?style=for-the-badge&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
