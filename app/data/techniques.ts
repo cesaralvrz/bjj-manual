@@ -163,6 +163,32 @@ export const techniques = [
         },
         videoUrl: 'https://www.youtube.com/embed/MXC9Tijb818'
       },
+      {
+        id: 'kimura-side-control',
+        subcategory: 'attack',
+        title: {
+          en: 'Kimura from Side Control',
+          es: 'Kimura desde Control Lateral'
+        },
+        description: {
+          en: 'The Kimura from side control is a shoulder lock that applies pressure to the opponent\'s shoulder joint by controlling their arm and rotating it inward, creating a powerful submission.',
+          es: 'El Kimura desde control lateral es un bloqueo de hombro que aplica presión a la articulación del hombro del oponente controlando su brazo y rotándolo hacia adentro, creando una sumisión poderosa.'
+        },
+        videoUrl: 'https://www.youtube.com/embed/Po_ugauR38k'
+      },
+      {
+        id: 'kimura-north-south',
+        subcategory: 'attack',
+        title: {
+          en: 'Kimura from North-South',
+          es: 'Kimura desde Norte-Sur'
+        },
+        description: {
+          en: 'The Kimura from north-south position is a shoulder lock technique that applies pressure to the opponent\'s shoulder joint while maintaining north-south control.',
+          es: 'El Kimura desde la posición norte-sur es una técnica de bloqueo de hombro que aplica presión a la articulación del hombro del oponente mientras mantienes el control norte-sur.'
+        },
+        videoUrl: 'https://www.youtube.com/embed/_aJ2NImA5jc'
+      },
     ]
   },
   {
