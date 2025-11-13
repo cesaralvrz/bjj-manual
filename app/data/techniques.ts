@@ -270,7 +270,7 @@ export const techniques = [
           en: 'The mount escape is a defensive technique to escape from the bottom of mount position, typically involving bridging, shrimping, or creating space to escape.',
           es: 'La salida de montada es una técnica defensiva para escapar desde abajo de la posición de montada, típicamente involucrando puente, camarón o creando espacio para escapar.'
         },
-        videoUrl: 'https://www.youtube.com/embed/lisQ7ZSPYMk'
+        videoUrl: 'https://www.youtube.com/embed/q2OAJF__P2w'
       },
       {
         id: 'mount-escape-adjustment',
