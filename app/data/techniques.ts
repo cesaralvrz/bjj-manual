@@ -106,6 +106,32 @@ export const techniques = [
         },
         videoUrl: 'https://www.youtube.com/embed/Bn7WId-nl0A?si=Hcs5FIg80v_wBelp'
       },
+      {
+        id: 'shoulder-crunch-armbar',
+        subcategory: 'attack',
+        title: {
+          en: 'Shoulder Crunch Armbar',
+          es: 'Armbar con Bloqueo de Hombro'
+        },
+        description: {
+          en: 'The shoulder crunch armbar uses a tight shoulder clamp to control the opponent’s posture before swinging into an armbar finish from closed guard.',
+          es: 'El armbar con bloqueo de hombro utiliza un cierre fuerte sobre el hombro para controlar la postura del oponente antes de girar y finalizar con una llave de brazo desde la guardia cerrada.'
+        },
+        videoUrl: 'https://www.youtube.com/embed/noW1pM3Ksg0'
+      },
+      {
+        id: 'pendulum-sweep-basic',
+        subcategory: 'attack',
+        title: {
+          en: 'Pendulum Sweep',
+          es: 'Raspada de Péndulo'
+        },
+        description: {
+          en: 'This pendulum sweep variation swings your leg like a pendulum to off-balance the opponent and complete the sweep back to mount or top position.',
+          es: 'Esta variación de la raspada de péndulo balancea la pierna como un péndulo para desequilibrar al oponente y completar el barrido terminando en montada o posición superior.'
+        },
+        videoUrl: 'https://www.youtube.com/embed/sw3dLQLctlE'
+      },
     ]
   },
   {
