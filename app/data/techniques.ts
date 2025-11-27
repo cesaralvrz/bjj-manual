@@ -324,6 +324,19 @@ export const techniques = [
         },
         videoUrl: 'https://www.youtube.com/embed/2LJnu1lo-y4'
       },
+      {
+        id: 'mount-escape-john-danaher',
+        subcategory: 'defense',
+        title: {
+          en: 'Mount Escape John Danaher',
+          es: 'Monte Escape John Danaher'
+        },
+        description: {
+          en: 'John Danaher, shows all of the necessary mount escapes and goes through all of the variations including a particular mount escape which shows an adjustment, John Danaher does when the person holding mount crosses his leg to defend the legs coming out from a hip escape.',
+          es: 'John Danaher muestra todas las escapadas necesarias desde la montada y sus variaciones, incluyendo una escapada en la que ajusta cuando la persona en montada cruza la pierna para defenderse del escape de cadera.'
+        },
+        videoUrl: 'https://www.youtube.com/embed/EMEueexp9zU'
+      },
     ]
   },
   {
