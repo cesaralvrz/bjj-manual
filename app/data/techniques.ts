@@ -101,36 +101,23 @@ export const techniques = [
           es: 'Salir de guardia cerrada (gi)'
         },
         description: {
-          en: 'To open closed guard with a gi, grip your opponent’s sleeve, plant one foot on the ground, stand up while controlling their arm, and use your knee to press down on their leg, forcing the guard to open.',
+          en: 'To open closed guard with a gi, grip your opponent\'s sleeve, plant one foot on the ground, stand up while controlling their arm, and use your knee to press down on their leg, forcing the guard to open.',
           es: 'Para abrir la guardia cerrada con gi, sujeta la manga de tu oponente, apoya un pie en el suelo, ponte de pie mientras controlas su brazo y utiliza tu rodilla para presionar sobre su pierna, forzando la apertura de la guardia.'
         },
         videoUrl: 'https://www.youtube.com/embed/Bn7WId-nl0A?si=Hcs5FIg80v_wBelp'
       },
       {
-        id: 'shoulder-crunch-armbar',
+        id: 'guillotine',
         subcategory: 'attack',
         title: {
-          en: 'Shoulder Crunch Armbar',
-          es: 'Armbar con Bloqueo de Hombro'
+          en: 'Guillotine Choke',
+          es: 'Guillotina'
         },
         description: {
-          en: 'The shoulder crunch armbar uses a tight shoulder clamp to control the opponent’s posture before swinging into an armbar finish from closed guard.',
-          es: 'El armbar con bloqueo de hombro utiliza un cierre fuerte sobre el hombro para controlar la postura del oponente antes de girar y finalizar con una llave de brazo desde la guardia cerrada.'
+          en: 'The guillotine choke is a chokehold that strangles the opponent by wrapping your arm around their neck and applying pressure, typically executed from guard or standing position.',
+          es: 'La guillotina es una estrangulación que estrangula al oponente envolviendo tu brazo alrededor de su cuello y aplicando presión, típicamente ejecutada desde la guardia o posición de pie.'
         },
-        videoUrl: 'https://www.youtube.com/embed/noW1pM3Ksg0'
-      },
-      {
-        id: 'pendulum-sweep-basic',
-        subcategory: 'attack',
-        title: {
-          en: 'Pendulum Sweep',
-          es: 'Raspada de Péndulo'
-        },
-        description: {
-          en: 'This pendulum sweep variation swings your leg like a pendulum to off-balance the opponent and complete the sweep back to mount or top position.',
-          es: 'Esta variación de la raspada de péndulo balancea la pierna como un péndulo para desequilibrar al oponente y completar el barrido terminando en montada o posición superior.'
-        },
-        videoUrl: 'https://www.youtube.com/embed/sw3dLQLctlE'
+        videoUrl: 'https://www.youtube.com/embed/V3mIy4yxZSk'
       },
     ]
   },
@@ -214,6 +201,19 @@ export const techniques = [
           es: 'El Kimura desde la posición norte-sur es una técnica de bloqueo de hombro que aplica presión a la articulación del hombro del oponente mientras mantienes el control norte-sur.'
         },
         videoUrl: 'https://www.youtube.com/embed/_aJ2NImA5jc'
+      },
+      {
+        id: 'arm-triangle-north-south',
+        subcategory: 'attack',
+        title: {
+          en: 'Arm Triangle from North-South',
+          es: 'Triángulo de Brazo desde Norte-Sur'
+        },
+        description: {
+          en: 'The arm triangle choke from north-south position is a chokehold that strangles the opponent by trapping their arm and head with your arms, cutting off blood flow to the brain while maintaining north-south control.',
+          es: 'El triángulo de brazo desde la posición norte-sur es una estrangulación que estrangula al oponente atrapando su brazo y cabeza con tus brazos, cortando el flujo de sangre al cerebro mientras mantienes el control norte-sur.'
+        },
+        videoUrl: 'https://www.youtube.com/embed/S_zd2g4IwK4'
       },
     ]
   },
